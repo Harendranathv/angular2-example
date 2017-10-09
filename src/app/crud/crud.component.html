@@ -29,7 +29,7 @@
 
     <hr/>
 
-    <button type="button" class="btn btn-warning" (click)="getItems()">Get Items</button>
+    <p><button type="button" class="btn btn-warning" (click)="getItems()">Get Items</button></p>
 
 
     <form class="form-inline">
@@ -40,15 +40,19 @@
       <button type="submit" class="btn btn-primary" (click)="filterItems()">Search</button>
     </form>
 
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let item of items">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title">{{item.name}}</h4>
-            <p class="card-text">{{item.description}}</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{item.name}}</td>
+          <td>{{item.description}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
