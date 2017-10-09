@@ -19,14 +19,14 @@ npm install -g angular-cli
  2. Update Backand configurations in `app.component.ts`
  ```javascript
  this.backand.init({
-      appName: 'your app name', //Your appName
-      signUpToken: 'your signup token', // Required for Signup Flow
-      anonymousToken: 'your anonymous token', // Required if you want to allow anonymous users
+      appName: 'your app name', 
+      signUpToken: 'your signup token', 
+      anonymousToken: 'your anonymous token', 
       runSocket: true //optional [true|false]
     });
  ```   
  
-2. Launch development server, and open `localhost:4200` in your browser:
+3. Launch development server, and open `localhost:4200` in your browser:
  ```bash
  ng serve
  ```
