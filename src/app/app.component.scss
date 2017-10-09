@@ -1,3 +1,15 @@
 nav {
-	background-color: orange;
+    background: #f26724;
+    li> {
+        a {
+            color: #ffffff;
+            &.active {
+                background: rgba(255, 255, 255, 0.21);
+            }
+        }
+    }
+    .navbar-brand {
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+    }
 }
