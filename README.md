@@ -1,66 +1,60 @@
-An example Angular JS 2 app using Backand JavaScript SDK
+# Angular 2.x, 4.x + Backand JavaScript SDK
+An example of Angular project with Backand Inetgartion and workflow based on
+[angular-cli](https://github.com/angular/angular-cli)
 
-# MyDreamApp
+# Prerequisites 
+1. Install latest nodeJs https://nodejs.org/
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0.
+2. Install angular CLI. [angular-cli](https://github.com/angular/angular-cli).
+```bash
+npm install -g angular-cli
+```
 
-To use the project with angular-cli, install it:
+# Getting started
+1. Go to project folder and install dependencies:
+ ```bash
+ npm install
+ ```
 
-    npm install -g angular-cli
+ 2. Update Backand configurations in `app.component.ts`
+ ```javascript
+ this.backand.init({
+      appName: 'your app name', //Your appName
+      signUpToken: 'your signup token', // Required for Signup Flow
+      anonymousToken: 'your anonymous token', // Required if you want to allow anonymous users
+      runSocket: true //optional [true|false]
+    });
+ ```   
+ 
+2. Launch development server, and open `localhost:4200` in your browser:
+ ```bash
+ ng serve
+ ```
+ 
+# Project structure
+```
+dist/                        compiled version
+e2e/                         end-to-end tests
+src/                         project source code
+|- app/                      app components
+|  |- crud/                  crud component (CRUD operation on your model in Backand.Get items, Post items, Filter items )
+|  |- files/                 files component (Upload files to Backand storage)
+|  |- login/                 login component (Sign in to Backand using username and password, or with anonymous token.)
+|  |- signup/                signup component (Sign up to Backand , Sign up using Facebook/Twitter/Google/GitHub)
+|  |- app.component.*        app root component (shell) - Update Backand configuration(appName, signUpToken, anonymousToken, runSocket)
+|  |- app.module.ts          app root module definition
+|  |- app-routing.module.ts  app routes
+|  +- ...                    additional modules and components
+|- assets/                   app assets (images, fonts, sounds...)
+|- environments/             values for various build environments
+|- index.html                html entry point
+|- styles.css                global style entry point
+|- main.ts                   app entry point
+|- polyfills.ts              polyfills needed by Angular
++- test.ts                   unit tests entry point
+```
 
-Then install dependendencies with:
-
-    npm install
-
-# Backand 
-
-Uses `angular2-sdk`. See [angular2-sdk](https://github.com/backand/angular2-sdk) about required dependencies.
-
-# App Structure
-
-The app structure is the standard Angular JS 2 structure. The app code is the `src` folder. The app starts `AppModule` from `app.modulet.ts`, and does a bootstrap of `AppComponent` from `app.componenet.ts`. The app uses a Router, and constructs the routes in `app-routing.modules.ts`. 
-
-AppComponent shows a navigation bar, and using `router-outlet` switches views. 
-
-Layout of app is done using SASS.
-
-Using angular-cli, we generate screens with:
-
-    ng generate component my-new-component
-
-Each screen forms a folder under `src` with four files:
-
-* `ts` - typescript component
-* `html` - html template
-* `scss` - SASS for styling of template
-* `spec.ts` - tests
-
-## Components
-
-### Login 
-
-Sign in to Backand using username and password, or with anonymous token.
-
-## Sign Up
-
-1. Sign up to Backand 
-2. Sign up using Facebook/Twitter/Google/GitHub
-
-### CRUD 
-
-CRUD operation on your model in Backand
-
-Including:
-
-Get items
-Post items
-Filter items
-
-### Files 
-
-Upload files to Backand storage
-
-
-
-
-
+Generate new component using angular-cli.
+```bash
+ng generate component my-new-component
+```
