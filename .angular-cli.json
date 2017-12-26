@@ -1,8 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular2-example",
-    "version": "1.0.0"
+    "name": "angular2-example"
   },
   "apps": [
     {
@@ -23,7 +22,7 @@
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
-      "scripts": [        
+      "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/tether/dist/js/tether.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
@@ -59,6 +58,10 @@
   },
   "defaults": {
     "styleExt": "css",
-    "component": {}
+    "component": {
+    }
+  },
+  "warnings": {
+    "typescriptMismatch": false
   }
 }
