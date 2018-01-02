@@ -11,12 +11,13 @@ npm install -g angular-cli
 ```
 
 # Getting started
-1. Go to project folder and install dependencies:
+1. Clone https://github.com/backand/angular2-example
+2. Go to project folder and install dependencies:
  ```bash
  npm install
  ```
 
- 2. Update Backand configurations in `app.component.ts`
+3. Update Backand configurations in `app.component.ts`
  ```javascript
  this.backand.init({
       appName: 'your app name', 
